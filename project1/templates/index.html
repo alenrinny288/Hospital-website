@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<h1 class="py-3 mx-5">Hi, Welcome</h1>
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="{% static '/Images/car1.jpg'%}" class="d-block w-100" alt="...">
+        
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="{% static '/Images/car2.jpg'%}" class="d-block w-100" alt="...">
+        
+      </div>
+      <div class="carousel-item">
+        <img src="{% static '/Images/car3.jpg'%}" class="d-block w-100" alt="...">
+        
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <br>
+  <h1 class="text-center">Our Departments</h1>
+  <hr>
+  {% for d in dept %}
+  <div class="mx-auto w-50 bg-primary text-center text-white p-3 my-5 border-warning rounded">
+    <h1>{{d.dept_name}}</h1>
+    <p>{{d.dept_description}}</p>
+  </div>
+  {% endfor %}
+{% endblock %}
