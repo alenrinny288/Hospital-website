@@ -20,7 +20,7 @@ class Doctors(models.Model):
 
 class Booking(models.Model):
     p_name = models.CharField(max_length=255)
-    p_phone = models.CharField(max_length=255)
+    p_phone = models.CharField(max_length=10)
     p_email = models.EmailField()
     doc_name = models.ForeignKey(Doctors, on_delete=models.CASCADE)
     book_date = models.DateField()
