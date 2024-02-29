@@ -14,14 +14,10 @@ def About(request):
         'num1': [1,2,3,4,5,6,7,8,9,0]
     }
     return render(request,'about.html',numbers)
-def Bookings(request):
+def Doctor(request):
    dict_doc={
         'doc': Doctors.objects.all()
     } 
-def Bookings2(request):
-   dict_doc={
-        'doc': Doctors.objects.all()
-    } 
-   return render(request,'Bookings.html',dict_doc)
+   return render(request,'doctor.html',dict_doc)
 def Contact(request):
     return render(request,'contact.html')
